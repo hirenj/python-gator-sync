@@ -1,7 +1,13 @@
 import rumps
+import keyring
 import os
 path = os.path.dirname(os.path.realpath(__file__))
 path_to_img = '%s/pony.jpg' % path
+
+endpoint = 'https://test.glycocode.com'
+
+client_id = keyring.get_password('gatordata.client_id', endpoint)
+client_secret = keyring.get_password('gatordata.client_secret', endpoint)
 
 rumps.debug_mode(True)
 
