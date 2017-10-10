@@ -31,7 +31,7 @@ token = gator.fetch_token(token_url=token_uri,client_id=client_id,client_secret=
 
 gator.headers.update({'x-api-key' : client_id })
 
-url = 'https://test.glycocode.com/api/metadata'
+url = '%s/api/metadata' % endpoint
 r = gator.get(url)
 
 user_metadata = r.json()
