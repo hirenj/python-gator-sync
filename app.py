@@ -36,6 +36,11 @@ r = gator.get(url)
 
 user_metadata = r.json()
 
+url = '%s/api/login' % endpoint
+r = gator.post(url)
+
+session_id = r.json()['session_id']
+
 rumps.debug_mode(True)
 
 @rumps.clicked('Icon', 'On')
